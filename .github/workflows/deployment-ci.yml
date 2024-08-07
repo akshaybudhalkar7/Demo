@@ -25,11 +25,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-    #   - name: Configure AWS Credentials
-    #     uses: aws-actions/configure-aws-credentials@v2
-    #     with:
-    #       role-to-assume: arn:aws:iam::${{ inputs.account_number }}:role/${{ inputs.environment }}-compare-file-utility-oidc-role
-    #       aws-region: ${{ inputs.region }} 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::${{ inputs.account_number }}:role/${{ inputs.environment }}-compare-file-utility-oidc-role
+          aws-region: ${{ inputs.region }} 
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
@@ -47,8 +47,8 @@ jobs:
       - name: install aws cdk
         run: npm install -g aws-cdk@2.139.0
 
-      - name: Run CDK Synth
-        run: cdk synth ${{ inputs.account }} 
+    #   - name: Run CDK Synth
+    #     run: cdk synth ${{ inputs.account }} 
 
       - name: run deployment
         run: cdk deploy $ {{ inputs.account }} --require-approval never --verbose

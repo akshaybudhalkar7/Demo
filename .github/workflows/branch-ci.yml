@@ -27,3 +27,6 @@ jobs:
     uses: ./.github/workflows/deployment-ci.yml
     with:
       environment: 'staging'  # Change to the appropriate environment
+      region: us-east-1
+      account: snowman
+      account_number: 441058194263

@@ -26,9 +26,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ inputs.account_number }}:role/${{ inputs.environment }}-compare-file-utility-oidc-role
+          role-to-assume: arn:aws:iam::441058194263:role/sbx-test-oidc-role
           role-session-name: GitHubActions
           aws-region: ${{ inputs.region }} 
 
@@ -50,7 +50,7 @@ jobs:
 
     #   - name: Run CDK Synth
     #     run: cdk synth ${{ inputs.account }} 
-    
+
 
       - name: run deployment
         run: cdk deploy $ {{ inputs.account }} --require-approval never --verbose

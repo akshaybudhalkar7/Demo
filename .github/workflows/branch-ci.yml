@@ -21,3 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Call deployment template
+        uses: ./.github/workflows/deployment-template.yml
+        with:
+            region: us-east-1
+            account: snowman
+            account_number: 441058194263
+            environment: nonprod
+
+

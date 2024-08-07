@@ -27,6 +27,6 @@ jobs:
 
   call-deployment:
     needs: build
-    uses: ./.github/workflows/deployment-template.yml
+    uses: ./.github/workflows/deployment-ci.yml
     with:
       environment: 'staging'  # Change to the appropriate environment

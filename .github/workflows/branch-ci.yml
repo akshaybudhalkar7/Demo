@@ -5,31 +5,28 @@ on:
     branches:
       - main
 
+
 jobs:
-    nonprd:
-        uses: ./.github/workflows/deployment-ci.yml
-        secrets: inherit
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-            region: us-east-1
-            account_number: 441058194263
-            account: snowman
-            environment: nonprod
+          node-version: '14'
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
+      - name: Install dependencies
+        run: npm install
 
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v2
+      - name: Run tests
+        run: npm test
 
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: '14'
-
-#       - name: Install dependencies
-#         run: npm install
-
-
-
+  call-deployment:
+    needs: build
+    uses: ./.github/workflows/deployment-template.yml
+    with:
+      environment: 'staging'  # Change to the appropriate environment

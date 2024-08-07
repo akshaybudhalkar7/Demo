@@ -2,8 +2,8 @@ name: Branch CI
 
 on:
   push:
-    branches-ignore:
-      - develop
+    branches:
+      - main
 
 jobs:
   build:
@@ -26,6 +26,6 @@ jobs:
 
   call-deployment:
     needs: build
-    uses: ./.github/workflows/deployment-template.yml
+    uses: ./.github/workflows/deployment.yml
     with:
       environment: 'staging'  # Change to the appropriate environment

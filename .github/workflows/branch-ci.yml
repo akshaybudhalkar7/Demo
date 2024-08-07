@@ -5,6 +5,14 @@ on:
     branches:
       - main
 
+
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+  checks: write
+  actions: read
+
 jobs:
     nonprod-us-east-1:
         uses: ./.github/workflows/deployment-ci.yml
@@ -14,7 +22,7 @@ jobs:
             account_number: 441058194263
             environment: nonprod
             account: snowman
-            
+
 
 
 

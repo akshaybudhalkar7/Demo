@@ -13,6 +13,7 @@ jobs:
             region: us-east-1
             account_number: 441058194263
             account: snowman
+            environment: nonprod
 
 # jobs:
 #   build:

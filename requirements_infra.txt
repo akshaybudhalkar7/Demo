@@ -1,2 +1,2 @@
 aws-cdk-lib==2.139.0
-constructs=10.1.93
+constructs==10.1.93

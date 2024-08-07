@@ -24,8 +24,3 @@ jobs:
       - name: Run tests
         run: npm test
 
-  call-deployment:
-    needs: build
-    uses: ./.github/workflows/deployment-ci.yml
-    with:
-      environment: 'staging'  # Change to the appropriate environment

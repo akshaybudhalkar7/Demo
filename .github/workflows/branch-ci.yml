@@ -6,27 +6,15 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Call deployment template
-        uses: ./.github/workflows/deployment-template.yml
+    nonprod-us-east-1:
+        uses: ./.github/workflows/deployment-ci.yml
+        secrets: inherit
         with:
             region: us-east-1
-            account: snowman
             account_number: 441058194263
             environment: nonprod
+            account: snowman
+            
+
 
 

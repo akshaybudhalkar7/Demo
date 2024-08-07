@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-    non-prd:
+    nonprd:
         uses: ./.github/workflows/deployment-ci.yml
         secrets: inherit
         with:

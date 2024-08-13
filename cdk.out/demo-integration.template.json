@@ -1,0 +1,58 @@
+{
+ "Resources": {
+  "demointegrations317707F53": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketName": "demo-integration-s3"
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "demo-integration/demo-integration-s3/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yXG0QmAIBQAwFn815cWLVALhA0QZkZmKfgUiWj3iL7uahCtAE5UQaYXxw47wz0mpR1VBSds4O6ydibRfvX/nq/SYMhRm4cOV9qCrxoQHDjZ0VoWs0/2NCB/X6ZuYmFkAAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "demo-integration/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "demo-integration.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "demo-integration.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "demo-integration": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://441058194263/us-east-1",
+      "properties": {
+        "templateFile": "demo-integration.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-deploy-role-441058194263-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-cfn-exec-role-441058194263-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-441058194263-us-east-1/e767c1c9a038d332df4ea4e76595029cbac33505eb4520abbd80e5353e0905cd.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "demo-integration.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-lookup-role-441058194263-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "demo-integration.assets"
+      ],
+      "metadata": {
+        "/demo-integration/demo-integration-s3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "demointegrations317707F53"
+          }
+        ],
+        "/demo-integration/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/demo-integration/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/demo-integration/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "demo-integration"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

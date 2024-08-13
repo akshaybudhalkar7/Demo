@@ -4,21 +4,21 @@
     "id": "App",
     "path": "",
     "children": {
-      "demo-integration": {
-        "id": "demo-integration",
-        "path": "demo-integration",
+      "snowman": {
+        "id": "snowman",
+        "path": "snowman",
         "children": {
-          "demo-integration-s3": {
-            "id": "demo-integration-s3",
-            "path": "demo-integration/demo-integration-s3",
+          "snowman-s3": {
+            "id": "snowman-s3",
+            "path": "snowman/snowman-s3",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "demo-integration/demo-integration-s3/Resource",
+                "path": "snowman/snowman-s3/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                   "aws:cdk:cloudformation:props": {
-                    "bucketName": "demo-integration-s3"
+                    "bucketName": "snowman-s3"
                   }
                 },
                 "constructInfo": {
@@ -34,11 +34,11 @@
           },
           "CDKMetadata": {
             "id": "CDKMetadata",
-            "path": "demo-integration/CDKMetadata",
+            "path": "snowman/CDKMetadata",
             "children": {
               "Default": {
                 "id": "Default",
-                "path": "demo-integration/CDKMetadata/Default",
+                "path": "snowman/CDKMetadata/Default",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.151.0"
@@ -52,7 +52,7 @@
           },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
-            "path": "demo-integration/BootstrapVersion",
+            "path": "snowman/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
               "version": "2.151.0"
@@ -60,7 +60,7 @@
           },
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
-            "path": "demo-integration/CheckBootstrapVersion",
+            "path": "snowman/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.151.0"

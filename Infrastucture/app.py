@@ -6,7 +6,7 @@ app = App()
 
 DemoStack(
     app,
-    "demo-integration",
+    "snowman",
     environment = "sbx",
     env = Environment(
         account = '441058194263',

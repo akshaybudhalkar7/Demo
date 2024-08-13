@@ -1,28 +1,28 @@
 {
   "version": "36.0.0",
   "artifacts": {
-    "demo-integration.assets": {
+    "snowman.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "demo-integration.assets.json",
+        "file": "snowman.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "demo-integration": {
+    "snowman": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://441058194263/us-east-1",
       "properties": {
-        "templateFile": "demo-integration.template.json",
+        "templateFile": "snowman.template.json",
         "terminationProtection": false,
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-deploy-role-441058194263-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-cfn-exec-role-441058194263-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-441058194263-us-east-1/e767c1c9a038d332df4ea4e76595029cbac33505eb4520abbd80e5353e0905cd.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-441058194263-us-east-1/712b3d45f7b48f279bc62ef1629ee19775de6e28aea9e0fbf05c77e4b9afb4ae.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "demo-integration.assets"
+          "snowman.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-lookup-role-441058194263-us-east-1",
@@ -31,35 +31,35 @@
         }
       },
       "dependencies": [
-        "demo-integration.assets"
+        "snowman.assets"
       ],
       "metadata": {
-        "/demo-integration/demo-integration-s3/Resource": [
+        "/snowman/snowman-s3/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "demointegrations317707F53"
+            "data": "snowmans336023647"
           }
         ],
-        "/demo-integration/CDKMetadata/Default": [
+        "/snowman/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/demo-integration/BootstrapVersion": [
+        "/snowman/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/demo-integration/CheckBootstrapVersion": [
+        "/snowman/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "demo-integration"
+      "displayName": "snowman"
     },
     "Tree": {
       "type": "cdk:tree",

@@ -7,7 +7,7 @@ app = App()
 DemoStack(
     app,
     "snowman",
-    environment = "sbx",
+    environment="sbx",
     env = Environment(
         account = '441058194263',
         region = 'us-east-1'

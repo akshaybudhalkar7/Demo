@@ -13,3 +13,4 @@ class DemoStack(Stack):
             "%s-s3" % id,
             bucket_name="%s-s3" % id,
         )
+

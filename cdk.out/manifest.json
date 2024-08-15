@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-deploy-role-441058194263-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::441058194263:role/cdk-hnb659fds-cfn-exec-role-441058194263-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-441058194263-us-east-1/712b3d45f7b48f279bc62ef1629ee19775de6e28aea9e0fbf05c77e4b9afb4ae.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-441058194263-us-east-1/1901c347a12c44aa658a39493f0ba6c5d87b4e35936fc8b30274a4bf143dcc31.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -38,6 +38,24 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "snowmans336023647"
+          }
+        ],
+        "/snowman/LambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRole3A44B857"
+          }
+        ],
+        "/snowman/LambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRoleDefaultPolicy75625A82"
+          }
+        ],
+        "/snowman/snowman-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "snowmanlambda28B8C789"
           }
         ],
         "/snowman/CDKMetadata/Default": [

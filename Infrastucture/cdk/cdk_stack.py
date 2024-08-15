@@ -39,3 +39,4 @@ class DemoStack(Stack):
                                               )
 
         sample_bucket.grant_read_write(lambda_function)
+

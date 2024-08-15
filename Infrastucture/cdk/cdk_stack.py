@@ -18,7 +18,7 @@ class DemoStack(Stack):
 
         lambda_exec_role = aws_iam.Role(
             self, 'LambdaRole',
-            assumed_by=aws_iam.ServicePrincipal('lamda.amazonaws.com'),
+            assumed_by=aws_iam.ServicePrincipal('lambda.amazonaws.com'),
             managed_policies=[
                 aws_iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AWSLambdaVPCAccessExecutionRole"),
                 aws_iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AWSLambdaRole"),
